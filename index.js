@@ -15,7 +15,6 @@ app.get('/', (req, res) => {
 //post request for contact form
 
 app.post('/send', (req, res) => {
-    
 
     const output = `
     <h2>Message received: </h2>
@@ -26,7 +25,7 @@ app.post('/send', (req, res) => {
     <p> Phone number: ${req.body.phone}</p>   
     `;
 
-//sending email to myself as a notification
+    //sending email to myself as a notification
     const sending = async () => {
 
         let transporter = nodemailer.createTransport({
@@ -34,8 +33,8 @@ app.post('/send', (req, res) => {
             port: 587,
             secure: false,
             auth: {
-                user: process.env.EMAIL_ONE, 
-                pass: process.env.PASSWORD, 
+                user: process.env.EMAIL_ONE,
+                pass: process.env.PASSWORD,
             },
             tls: {
                 rejectUnauthorized: false
@@ -54,9 +53,9 @@ app.post('/send', (req, res) => {
         console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
     }
 
-//sending email to the client telling them we received his message
+    //sending email to the client telling them we received his message
 
-const output2 = `
+    const output2 = `
     <h2>Hi ${req.body.name} We got your message: </h2>
     <p>"${req.body.message}"</p>
     <p> We will reply to your message as soon as possible!</p>
@@ -70,8 +69,8 @@ const output2 = `
             port: 587,
             secure: false, // true for 465, false for other ports
             auth: {
-                user: process.env.EMAIL_ONE, 
-                pass: process.env.PASSWORD, 
+                user: process.env.EMAIL_ONE,
+                pass: process.env.PASSWORD,
             },
             tls: {
                 rejectUnauthorized: false
@@ -90,7 +89,7 @@ const output2 = `
         console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info2));
     }
 
-//calling both functions
+    //calling both functions
     sending().catch(console.error);
     sendingToContact().catch(console.error)
 
@@ -98,6 +97,20 @@ const output2 = `
 )
 
 
+
+//
+
+// serve up production assets
+app.use(express.static('client/build'));
+// let the react app to handle any unknown routes 
+// serve up the index.html if express does'nt recognize the route
+const path = require('path');
+app.get('*', (req, res) => {
+res.sendFile(path.join(__dirname, '/client/build/index.html'));
+});
+
+
+//
 app.listen(5000, () => {
     console.log("server connected on port 5000")
 })
