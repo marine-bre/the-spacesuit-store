@@ -1,0 +1,171 @@
+@import "./sass-modules/_config.scss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+html {
+  box-sizing: border-box;
+  // margin-left: 13px;
+  overflow-x: hidden !important;
+  scroll-behavior: smooth;
+}
+body {
+  background: $background-color;
+  position: relative;
+  background: rgb(2,2,9);
+  background: linear-gradient(90deg, rgba(2,2,9,1) 0%, rgba(6,5,38,1) 48%, rgba(18,18,68,1) 63%, rgba(9,10,79,1) 73%, rgba(51,36,8,1) 96%, rgba(57,40,7,1) 100%);
+}
+
+hr {
+  margin-top: 20vh;
+  width: 50vw;
+  border: 2px solid set-text-color($background-color);
+}
+
+img{
+  border-radius: 4px;
+}
+
+h3 {
+  color: set-text-color($background-color);
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 10vh;
+  margin-top: 10vh;
+}
+
+//nav bar configuration
+#nav-bar {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  position: fixed;
+  top:0;
+  z-index: 10;
+  display: flex;
+  height: 10vh;
+  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-color;
+}
+
+#nav-bar {
+ 
+  h1 {
+    font-size: 3em;
+    color: set-text-color($primary-color);
+    margin-left: 2vh;
+  }
+  ul {
+    display: flex;
+    flex-grow: 1.5;
+    justify-content: flex-end;
+    font-size: 1em;
+    margin-right:10%;
+    li {
+      list-style: none;
+      margin: 2%;
+    }
+    a {
+      text-decoration: none;
+      color: set-text-color($primary-color);
+    }
+  }
+}
+
+//burger design
+#burger {
+  display: none;
+  div {
+    background-color: $secondary-light-color;
+    height: 3px;
+    width: 26px;
+    margin-bottom: 15%;
+    transition: all ease 1s;
+  }
+}
+
+.open:nth-child(1) {
+  transform: rotate(45deg) translateY(10px);
+}
+.open:nth-child(2) {
+  opacity: 0;
+}
+.open:nth-child(3) {
+  transform: rotate(-45deg) translateY(-10px);
+}
+.close:nth-child(1) {
+  transform: rotate(0deg);
+}
+.close:nth-child(2) {
+  opacity: 1;
+}
+.close:nth-child(3) {
+  transform: rotate(0deg);
+}
+
+//
+//second part of the page
+
+.menu-button:hover {
+  padding-bottom: 0.5vh;
+  border-bottom: 2px solid set-text-color($primary-color);
+}
+
+.main-container {
+  margin: 10vh 5vh;
+  display: flex;
+  justify-content: space-between;
+
+  .main-container-text {
+    width: 30vw;
+    position: relative;
+    top: 10vh;
+    left: 5vw;
+    color: set-text-color($background-color);
+    h2 {
+      font-size: 2em;
+    }
+    p {
+      font-size: 1em;
+    }
+  }
+  .main-container-image {
+    position: relative;
+    right: 8vw;
+    top: 8vh;
+    height: $image-height;
+  }
+  img {
+    position: relative;
+    height: $image-height;
+  }
+}
+
+//styling of image
+
+#image-before {
+  height: $image-height;
+  width: $image-width;
+  border: 4px solid $secondary-light-color;
+  position: absolute;
+  z-index: 2;
+  top: -6vh;
+  right: -6vw;
+  border-radius: 4px;
+}
+
+#copyright{
+  font-size: 0.8em;
+  background-color: $primary-color;
+  height:12vh;
+  // line-height: 4vh;
+  margin-top: 10vh;
+  padding-top: 4vh;
+  color: set-text-color($primary-color);
+  text-align: center;
+}
+
+@import "./sass-modules/_button.scss";
+@import "./sass-modules/_mobile.scss";
+@import "./sass-modules/_bestsellers.scss";
+@import "./sass-modules/_contactstyle.scss";
+@import "./sass-modules/_promise.scss";

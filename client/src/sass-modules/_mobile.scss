@@ -1,0 +1,178 @@
+@media screen and (max-width: 800px) {
+  body {
+    position: static !important;
+    overflow: hidden;
+    width: 100% !important;
+  }
+  h2 {
+    font-size: 2.2em !important;
+  }
+
+  h3 {
+    font-size: 3em;
+  }
+
+  #nav-bar {
+    align-items: flex-start !important;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    h1 {
+      font-size: 2em !important;
+      margin-left:45px !important;
+      margin-block-start: 17px;
+    }
+    ul {
+      height: 100vh;
+      width: 33vw;
+      flex-direction: column;
+      justify-content: flex-start !important;
+      background-color: $primary-color;
+      position: absolute;
+      transform: translateX(-100%);
+      transition: transform 2s;
+      margin-block-start: 9vh;
+      padding-inline-start: 10px;
+      z-index: -1;
+      li {
+        margin: 4vh !important;
+      }
+    }
+  }
+
+  #burger {
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: 30px;
+  }
+
+  .main-container {
+    position: relative;
+    top: 5vh;
+    margin-left: 0;
+
+    .main-container-text {
+      width: 80vw;
+      margin: 10vw;
+      left: 0;
+      top: 0;
+    }
+
+    .main-container-image {
+      display: none;
+    }
+  }
+
+
+  //photo best seller section
+
+  #bestsellers{
+    height: 180vh !important;
+  }
+
+  .image-container {
+    width: 100% !important;
+    height: 30% !important;
+    img{
+      width:100% !important;
+    }
+    .text-on-image{
+      width:100% !important;
+      margin:0 !important;
+    }
+  }
+
+  .image-container:hover {
+    h1 {
+      font-size: 20px !important;
+    }
+    p {
+      font-size: 10px !important;
+    }
+  }
+  .image-container:nth-child(2) {
+    top: 10% !important;
+    left: 0;
+  }
+
+  .image-container:nth-child(3) {
+    top: 40% !important;
+    right:0px !important;
+  }
+  .image-container:nth-child(4) {
+    top:80% !important;
+    left: 0;
+  }
+
+  //promise section for mobile
+
+  #promise-div {
+    #quality {
+      top: 0;
+      left: 2%;
+    }
+    #design {
+      top: 45%;
+      right: 5%;
+    }
+    #aftercare {
+      top: 90%;
+      left: 2%;
+    }
+    .pro-title {
+      font-size: 30px !important;
+    }
+    .pro-number {
+      font-size: 30px;
+    }
+    .pro-desc {
+      font-size: 13px;
+      width: 55%;
+    }
+    img {
+      width: 20%;
+    }
+  }
+
+  //contact form for mobile
+
+  #contact-form {
+    width: 100vw;
+    display: flex !important;
+    flex-direction: column;
+    li {
+      display: flex !important;
+      flex-direction: column;
+    }
+    input {
+      margin-top: 1vh;
+      min-width: 200px;
+    }
+    button {
+      margin-left: 20%;
+    }
+  }
+}
+
+//settings for the menu slide-in
+.slide {
+  transform: translateX(0%) !important;
+  z-index: -1;
+  transition: transform 2s;
+}
+
+.elements-slide {
+  animation: slidein 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

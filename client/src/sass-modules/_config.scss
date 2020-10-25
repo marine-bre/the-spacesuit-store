@@ -1,0 +1,25 @@
+$background-color:#031625;
+
+$primary-color: #153464;
+$secondary-color: #005c8d;
+
+$light-color: #fbeaff;
+$secondary-light-color: #e8d5b5;
+
+@function set-text-color($color) {
+  @if ($color==$primary-color) {
+    @return $secondary-light-color;
+  }
+  @if ($color==$secondary-color) {
+    @return $light-color;
+  }
+  @if ($color==$background-color) {
+    @return $secondary-light-color;
+  }
+  @else{
+      @return black;
+  }
+}
+
+$image-height:500px;
+$image-width:498px;

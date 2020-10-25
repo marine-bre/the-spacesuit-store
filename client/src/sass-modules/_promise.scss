@@ -1,0 +1,75 @@
+#promise-div {
+  position: relative;
+  height: 60vh;
+  padding-bottom: 5vh;
+}
+.pro-number {
+  font-size: 3.5em;
+  font-weight: 700;
+  color: set-text-color($background-color);
+}
+
+.pro-title {
+  font-size: 3em;
+  font-weight: 700;
+  color: set-text-color($background-color);
+}
+
+.pro-desc {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 10vh;
+  width: 60vw;
+  color: set-text-color($background-color);
+  font-size: 1.3em;
+  text-align: justify;
+
+}
+
+.promises {
+  display: flex;
+  margin-bottom: 2vh;
+  position: absolute;
+  img {
+    width: 7vw;
+  }
+  img:hover{
+    animation-name: heartbeat;
+    animation-duration:5s;
+  }
+  
+  .pro-text {
+    display: flex;
+  }
+  .pro-title-sq {
+    display: flex;
+    flex-direction: column;
+    text-shadow: 3px 3px rgb(46, 33, 6);
+  }
+}
+
+@keyframes heartbeat{
+  0%{transform: scale( 1 );}
+  20%{transform: scale( 1.25 );}
+  40%{transform: scale( 1 );}
+  60%{transform: scale( 1.25 );}
+  80%{transform: scale( 1 );}
+  100%{transform: scale( 1.25 );}
+}
+
+#quality {
+  left: 7vw;
+}
+
+#design {
+  top: 20vh;
+  right: 7vw;
+}
+
+#aftercare {
+  top: 40vh;
+  left: 7vw;
+}

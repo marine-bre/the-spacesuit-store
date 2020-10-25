@@ -1,0 +1,67 @@
+#bestsellers {
+  width: 100vw;
+  position: relative;
+  height: 155vh;
+}
+
+.image-container {
+  position: absolute;
+  width: 50vw;
+  height: 50vh;
+
+  &:nth-child(2) {
+    top: 20vh;
+    left: 0;
+  }
+
+  &:nth-child(3) {
+    top: 50vh;
+    right: -45px;
+    height: 90vh;
+  }
+  &:nth-child(4) {
+    top: 95vh;
+    left: 0;
+  }
+
+  img {
+    width: 45vw;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+  .text-on-image {
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    width: 40vw;
+    margin: 5%;
+    color: set-text-color($background-color);
+    opacity: 0;
+
+    h1 {
+      font-size: 50px;
+      text-shadow: 2px 2px $primary-color;
+    }
+    h2 {
+      font-size: 28px;
+      text-shadow: 1px 1px $primary-color;
+    }
+    p {
+      font-size: 20px;
+      text-shadow: 0.5px 0.5px $primary-color;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    img {
+      filter: blur(2px);
+    }
+    .text-on-image {
+        opacity: 1;
+        transition: opacity 0.5s;
+    }
+  }
+}

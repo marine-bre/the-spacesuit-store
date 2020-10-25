@@ -1,0 +1,17 @@
+.button-go{
+    font-size: 1em;
+    background-color: $secondary-color;
+    color:set-text-color($secondary-color);
+    border:none;
+    padding: 10px;
+    margin: 3vh;
+    font-weight: 800;
+    border-radius: 10px;
+    cursor: pointer;
+    min-width: 100px;
+
+    &:hover{
+        transform: scale(0.98);
+    }
+}
+
