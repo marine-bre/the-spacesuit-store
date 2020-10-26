@@ -206,6 +206,12 @@ h3 {
           transform: scale(0.98);
 }
 
+@media screen and (max-width: 320px) {
+  #nav-bar h1 {
+    font-size: 1.5em !important;
+  }
+}
+
 @media screen and (max-width: 800px) {
   body {
     position: static !important;
@@ -228,7 +234,7 @@ h3 {
     left: 0;
   }
   #nav-bar h1 {
-    font-size: 2em !important;
+    font-size: 2em;
     margin-left: 45px !important;
     -webkit-margin-before: 17px;
             margin-block-start: 17px;
