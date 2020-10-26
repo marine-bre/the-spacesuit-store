@@ -7,7 +7,7 @@ const Promise = () => {
     <div id="promise-div"> 
       <div id = "quality" className = "promises">
         <img
-          src={require("../pictures/iconfinder_Crystal_Shard_2913097 (1).png")}
+          src='https://raw.githubusercontent.com/marine-bre/the-spacesuit-store/master/client/src/pictures/iconfinder_Crystal_Shard_2913097%20(1).png'
         alt="quality"></img>
         <div className = "pro-text">
           <div className = "pro-title-sq">
@@ -30,7 +30,7 @@ const Promise = () => {
           comnbined with world renowned fashion designers, will ensure that your
           suit is not only safe and ergonomic but also up to the latest trends.
         </span>
-        <img src={require("../pictures/iconfinder_Sword_2913105.png")} alt="design"></img>
+        <img src='https://raw.githubusercontent.com/marine-bre/the-spacesuit-store/master/client/src/pictures/iconfinder_Sword_2913105.png' alt="design"></img>
         <div className="pro-text">
           <div className="pro-title-sq">
             <span className="pro-number">// 02</span>
@@ -40,7 +40,7 @@ const Promise = () => {
       </div>
       <div id="aftercare" className="promises">
         <img
-          src={require("../pictures/iconfinder_Destructive_Magic_2913121.png")} alt="aftercare"
+          src='https://raw.githubusercontent.com/marine-bre/the-spacesuit-store/master/client/src/pictures/iconfinder_Destructive_Magic_2913121.png' alt="aftercare"
         ></img>
         <div className="pro-text">
           <div className="pro-title-sq">

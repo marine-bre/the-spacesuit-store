@@ -35,7 +35,7 @@ const Contact = () => {
             setResult(response.data);
         })
         .then(resetFields())
-        .then(resultMessage.textContent="Email sent successfully")
+        .then(resultMessage.textContent="We got it! Thanks!")
         .catch(()=>{
             setResult({sucess:"false", message:'Something went wrong, please try again'})
         });}
