@@ -4,13 +4,18 @@ const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
 dotenv.config();
 
+// serve up production assets
+app.use(express.static('client/build'));
+// let the react app to handle any unknown routes 
+// serve up the index.html if express does'nt recognize the route
+const path = require('path');
+app.get('*', (req, res) => {
+res.sendFile(path.join(__dirname, '/client/build/index.html'));
+});
+
 //parsing content from form
 app.use(express.json())
 app.use(express.urlencoded())
-
-app.get('/', (req, res) => {
-    res.send('hello')
-})
 
 //post request for contact form
 
@@ -95,19 +100,6 @@ app.post('/send', (req, res) => {
 
 }
 )
-
-
-
-//
-
-// serve up production assets
-app.use(express.static('client/build'));
-// let the react app to handle any unknown routes 
-// serve up the index.html if express does'nt recognize the route
-const path = require('path');
-app.get('*', (req, res) => {
-res.sendFile(path.join(__dirname, '/client/build/index.html'));
-});
 
 
 //
