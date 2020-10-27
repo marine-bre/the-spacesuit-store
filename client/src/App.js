@@ -18,7 +18,6 @@ function App() {
   useEffect(() => {
     const mainImage = document.getElementById("main-image");
     const square = document.getElementById("image-before");
-    console.log(square, mainImage);
     window.addEventListener("scroll", () => {
       let value = window.scrollY;
       mainImage.style.top = value * 0.1 + "px";

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap");
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -8,6 +9,7 @@ html {
 
 body {
   background: #031625;
+  font-family: 'Noto Sans TC', sans-serif;
   position: relative;
   background: #020209;
   background: -webkit-gradient(linear, left top, right top, from(#020209), color-stop(48%, #060526), color-stop(63%, #121244), color-stop(73%, #090a4f), color-stop(96%, #332408), to(#392807));
@@ -35,7 +37,6 @@ h3 {
 #nav-bar {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
   position: fixed;
   top: 0;
   z-index: 10;
@@ -199,6 +200,7 @@ h3 {
   border-radius: 10px;
   cursor: pointer;
   min-width: 100px;
+  font-family: 'Noto Sans TC', sans-serif;
 }
 
 .button-go:hover {
@@ -593,7 +595,7 @@ h3 {
 }
 
 .promises img {
-  width: 7vw;
+  width: 10%;
 }
 
 .promises img:hover {
@@ -625,25 +627,33 @@ h3 {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
-  20% {
+  15% {
     -webkit-transform: scale(1.25);
             transform: scale(1.25);
   }
-  40% {
+  30% {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
-  60% {
+  45% {
     -webkit-transform: scale(1.25);
             transform: scale(1.25);
   }
-  80% {
+  60% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  75% {
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
+  }
+  90% {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
   100% {
-    -webkit-transform: scale(1.25);
-            transform: scale(1.25);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
@@ -652,25 +662,33 @@ h3 {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
-  20% {
+  15% {
     -webkit-transform: scale(1.25);
             transform: scale(1.25);
   }
-  40% {
+  30% {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
-  60% {
+  45% {
     -webkit-transform: scale(1.25);
             transform: scale(1.25);
   }
-  80% {
+  60% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  75% {
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
+  }
+  90% {
     -webkit-transform: scale(1);
             transform: scale(1);
   }
   100% {
-    -webkit-transform: scale(1.25);
-            transform: scale(1.25);
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 

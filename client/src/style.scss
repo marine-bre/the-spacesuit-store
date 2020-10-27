@@ -1,5 +1,6 @@
 @import "./sass-modules/_config.scss";
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap');
 
 html {
   box-sizing: border-box;
@@ -9,6 +10,7 @@ html {
 }
 body {
   background: $background-color;
+  font-family: 'Noto Sans TC', sans-serif;
   position: relative;
   background: rgb(2,2,9);
   background: linear-gradient(90deg, rgba(2,2,9,1) 0%, rgba(6,5,38,1) 48%, rgba(18,18,68,1) 63%, rgba(9,10,79,1) 73%, rgba(51,36,8,1) 96%, rgba(57,40,7,1) 100%);
@@ -35,7 +37,7 @@ h3 {
 //nav bar configuration
 #nav-bar {
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+ 
   position: fixed;
   top:0;
   z-index: 10;
