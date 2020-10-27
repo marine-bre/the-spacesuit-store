@@ -95,8 +95,8 @@ app.post('/send', (req, res) => {
     }
 
     //calling both functions
-    sending().catch(console.error);
-    sendingToContact().catch(console.error)
+    sending().catch(console.log(error));
+    sendingToContact().catch(console.log(error))
 
 }
 )
