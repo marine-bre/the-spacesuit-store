@@ -11,7 +11,7 @@ const Promise = () => {
         alt="quality"></img>
         <div className = "pro-text">
           <div className = "pro-title-sq">
-            <span className = "pro-number">// 01</span>
+            <span className = "pro-number">\\ 01</span>
             <span className = "pro-title"> quality</span>
           </div>
           <span className="pro-desc">
@@ -33,7 +33,7 @@ const Promise = () => {
         <img src='https://raw.githubusercontent.com/marine-bre/the-spacesuit-store/master/client/src/pictures/iconfinder_Sword_2913105.png' alt="design"></img>
         <div className="pro-text">
           <div className="pro-title-sq">
-            <span className="pro-number">// 02</span>
+            <span className="pro-number">\\ 02</span>
             <span className="pro-title">design</span>
           </div>
         </div>
@@ -44,7 +44,7 @@ const Promise = () => {
         ></img>
         <div className="pro-text">
           <div className="pro-title-sq">
-            <span className="pro-number">// 03</span>
+            <span className="pro-number">\\ 03</span>
             <span className="pro-title">aftercare</span>
           </div>
           <span className="pro-desc">

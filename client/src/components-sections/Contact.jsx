@@ -10,8 +10,6 @@ const Contact = () => {
     const [phone, setPhone] = useState("");
     const [message, setMessage] = useState("");
 
-    const [result, setResult] = useState(null);
-
     const resultMessage = document.getElementById("result-message");
 
     const emailValidation = (email) => {
@@ -31,13 +29,10 @@ const Contact = () => {
         e.preventDefault();
         if(emailValidation(email)===true){
             axios.post('/send', {message, name, phone, email})
-        .then(response => {
-            setResult(response.data);
-        })
         .then(resetFields())
         .then(resultMessage.textContent="We got it! Thanks!")
-        .catch(()=>{
-            setResult({sucess:"false", message:'Something went wrong, please try again'})
+        .catch((error)=>{
+            console.log(JSON.stringify(error))
         });}
         else{
             alert("please enter correct email address")}

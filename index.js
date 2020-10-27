@@ -55,7 +55,6 @@ app.post('/send', (req, res) => {
         });
 
         console.log("Message sent: %s", info.messageId);
-        console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
     }
 
     //sending email to the client telling them we received his message
@@ -95,8 +94,9 @@ app.post('/send', (req, res) => {
     }
 
     //calling both functions
-    sending().catch(console.log(error));
-    sendingToContact().catch(console.log(error))
+    sending().catch((error) =>console.log(JSON.stringify(error))
+    );
+    sendingToContact().catch((error) =>console.log(JSON.stringify(error)))
 
 }
 )
