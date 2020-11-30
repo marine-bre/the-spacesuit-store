@@ -27,7 +27,7 @@ const Contact = () => {
         
         e.preventDefault();
         if(emailValidation(email)===true){
-            axios.post('/', {message, name, phone, email})
+            axios.post('/send', {message, name, phone, email})
         .then(resetFields())
         .then(resultMessage.textContent="We got it! Thanks!")
         .catch((error)=>{
