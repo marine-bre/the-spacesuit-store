@@ -4,6 +4,9 @@ const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
 dotenv.config();
 
+const http = require('http').createServer(app)
+
+
 // serve up production assets
 app.use(express.static('client/build'));
 // let the react app to handle any unknown routes 
@@ -106,6 +109,10 @@ app.post('/send', (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
+// app.listen(PORT, () => {
+//     console.log(`server connected on port ${PORT}`)
+// })
+
+http.listen(PORT, () => {
     console.log(`server connected on port ${PORT}`)
 })
