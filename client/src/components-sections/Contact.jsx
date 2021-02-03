@@ -13,7 +13,7 @@ const Contact = () => {
 
     const emailValidation = (email) => {
         const emailRegex = /(^\w+)[a-z0-9.]+\@\w+\.\w+/i;
-        return emailRegex.test(email)? true : false
+        return emailRegex.test(email) ? true : false
     }
 
     const resetFields = () => {
@@ -23,41 +23,42 @@ const Contact = () => {
         setMessage('');
     }
 
-    const contactSubmit = (e) => {        
-        
+    const contactSubmit = (e) => {
+
         e.preventDefault();
-        if(emailValidation(email)===true){
-            axios.post('/send', {message, name, phone, email})
-        .then(resetFields())
-        .then(resultMessage.textContent="We got it! Thanks!")
-        .catch((error)=>{
-            console.log(JSON.stringify(error))
-        });}
-        else{
-            alert("please enter correct email address")}
-            setEmail('')
+        if (emailValidation(email) === true) {
+            axios.post('/send', { message, name, phone, email })
+                .then(resetFields())
+                .then(resultMessage.textContent = "We got it! Thanks!")
+                .catch((error) => {
+                    console.log(JSON.stringify(error))
+                });
         }
+        else {
+            alert("please enter correct email address")
+        }
+        setEmail('')
+    }
 
     return (
         <div id="contact">
             <form onSubmit={contactSubmit} method='POST' action='send'>
-                <ul id="contact-form">
-                    <li>
-                        <label htmlFor="form-name">* Name : </label>
-                        <input type="text" id="form-name" value={name} onChange={e => setName(e.target.value)} required></input>
-                    </li>
-                    <li> <label htmlFor="form-email">* E-mail address : </label>
-                        <input id="form-email" value={email} onChange={e => setEmail(e.target.value)} required></input>
-                    </li>
-                    <li> <label htmlFor="form-phone">* Phone number : </label>
-                        <input type="text" id="form-phone" value={phone} onChange={e => setPhone(e.target.value)} required></input>
-                    </li>
-                    <li id='message-field'>  <label htmlFor="form-message">* Your message : </label>
-                        <input type="text" id="form-message" value={message} onChange={e => setMessage(e.target.value)} required></input>
-                    </li>
+                <div className="form--fields">
 
-                    <button type="submit" value="submit" className="button-go">Submit</button>
-                </ul>
+                    <div className="labels">
+                        <label htmlFor="form-name">* Name : </label>
+                        <label htmlFor="form-email">* E-mail address : </label>
+                        <label htmlFor="form-phone">* Phone number : </label>
+                        <label htmlFor="form-message">* Your message : </label>
+                    </div>
+                    <div className="field">
+                        <input type="text" id="form-name" value={name} onChange={e => setName(e.target.value)} required></input>
+                        <input id="form-email" value={email} onChange={e => setEmail(e.target.value)} required></input>
+                        <input type="text" id="form-phone" value={phone} onChange={e => setPhone(e.target.value)} required></input>
+                        <input type="text" id="form-message" value={message} onChange={e => setMessage(e.target.value)} required></input>
+                    </div>
+                </div>
+                <button type="submit" value="submit" className="btn form--btn">Submit</button>
             </form>
             <p id="result-message"></p>
 

@@ -1,77 +1,56 @@
 #promise-div {
-  position: relative;
-  height: 60vh;
-  padding-bottom: 5vh;
-}
-.pro-number {
-  font-size: 3.5em;
-  font-weight: 700;
-  color: set-text-color($background-color);
-}
-
-.pro-title {
-  font-size: 3em;
-  font-weight: 700;
-  color: set-text-color($background-color);
-}
-
-.pro-desc {
+  width: 100vw;
+  // padding-bottom: 5vh;
   display: flex;
-  align-self: center;
+  flex-direction: column;
+  align-items: flex-start;
+
+}
+
+.pro--container {
+  margin: 10px 40px;
+  width: 50vw;
+  height: 25vh;
+  background: #b92b27;
+  background: linear-gradient(to right, #1565c07c, #b92c276e);
+  border-radius: 1em;
+  backdrop-filter: blur(7px);
+  display: flex;
   align-items: center;
-  margin-left: 5%;
-  margin-right: 5%;
-  height: 10vh;
-  width: 60vw;
-  color: set-text-color($background-color);
-  font-size: 1.3em;
-  text-align: justify;
-
+  justify-content: space-evenly;
 }
 
-.promises {
-  display: flex;
-  margin-bottom: 2vh;
+.right {
+  align-self: flex-end;
+  background: #b92b27;
+  background: linear-gradient(to left, #1565c07c, #b92c276e);
+}
+
+.pro--header {
+  background: linear-gradient(to left, #1565c0, #b92b27);
+  border-radius: 10em;
+  height: 175px;
+  width: 175px;
+  min-height: 175px;
+  min-width: 175px;
+  box-shadow: inset 2px 2px 30px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+.header--right{
+  background: linear-gradient(to right, #1565c0, #b92b27);
+}
+
+.pro--title {
   position: absolute;
-  img {
-    width: 10%;
-  }
-  img:hover{
-    animation-name: heartbeat;
-    animation-duration:5s;
-  }
-  
-  .pro-text {
-    display: flex;
-  }
-  .pro-title-sq {
-    display: flex;
-    flex-direction: column;
-    text-shadow: 3px 3px rgb(46, 33, 6);
-  }
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Poppins", sans-serif;
+  color: $secondary-light-color;
 }
 
-@keyframes heartbeat{
-  0%{transform: scale( 1 );}
-  15%{transform: scale( 1.25 );}
-  30%{transform: scale( 1 );}
-  45%{transform: scale( 1.25 );}
-  60%{transform: scale( 1 );}
-  75%{transform: scale( 1.25 );}
-  90%{transform: scale( 1 );}
-  100%{transform: scale( 1 );}
-}
-
-#quality {
-  left: 7vw;
-}
-
-#design {
-  top: 20vh;
-  right: 7vw;
-}
-
-#aftercare {
-  top: 40vh;
-  left: 7vw;
+.pro--text {
+  line-height: 200%;
+  width: 60%;
+  color: $secondary-light-color;
 }

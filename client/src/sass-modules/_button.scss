@@ -1,16 +1,21 @@
-.button-go{
-    font-size: 1em;
+.btn{
+    font-size: 0.9em;
     background-color: $secondary-color;
-    color:set-text-color($secondary-color);
     border:none;
-    padding: 10px;
-    margin: 3vh;
+    padding: 10px 20px;
+    margin-top: 25px;
     font-weight: 800;
     border-radius: 10px;
     cursor: pointer;
-    min-width: 100px;
-    font-family: 'Noto Sans TC', sans-serif;
+    min-width: 150px;
+    max-height: 60px;
+    font-family: "Poppins", sans-serif;
+    color: $secondary-light-color;
 
+a{
+    text-decoration: none;
+    color: $secondary-light-color;
+}
     &:hover{
         transform: scale(0.98);
     }

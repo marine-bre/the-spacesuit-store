@@ -1,6 +1,7 @@
 @import "./sass-modules/_config.scss";
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 html {
   box-sizing: border-box;
@@ -10,19 +11,28 @@ html {
 }
 body {
   background: $background-color;
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
   position: relative;
-  background: rgb(2,2,9);
-  background: linear-gradient(90deg, rgba(2,2,9,1) 0%, rgba(6,5,38,1) 48%, rgba(18,18,68,1) 63%, rgba(9,10,79,1) 73%, rgba(51,36,8,1) 96%, rgba(57,40,7,1) 100%);
+  background: rgb(2, 2, 9);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 2, 9, 1) 0%,
+    rgba(6, 5, 38, 1) 48%,
+    rgba(18, 18, 68, 1) 63%,
+    rgba(9, 10, 79, 1) 73%,
+    rgba(51, 36, 8, 1) 96%,
+    rgba(57, 40, 7, 1) 100%
+  );
 }
 
 hr {
-  margin-top: 20vh;
+  margin-top: 23vh;
+  margin-bottom: 8vh;
   width: 50vw;
   border: 2px solid set-text-color($background-color);
 }
 
-img{
+img {
   border-radius: 4px;
 }
 
@@ -30,27 +40,22 @@ h3 {
   color: set-text-color($background-color);
   font-size: 50px;
   text-align: center;
-  margin-bottom: 10vh;
-  margin-top: 10vh;
+  margin-bottom: 5vh;
+  margin-top: 5vh;
 }
 
 //nav bar configuration
 #nav-bar {
   box-sizing: border-box;
- 
   position: fixed;
-  top:0;
-  z-index: 10;
+  top: 0;
+  z-index: 100;
   display: flex;
   height: 10vh;
   width: 100vw;
   justify-content: space-between;
   align-items: center;
   background-color: $primary-color;
-}
-
-#nav-bar {
- 
   h1 {
     font-size: 3em;
     color: set-text-color($primary-color);
@@ -61,17 +66,56 @@ h3 {
     flex-grow: 1.5;
     justify-content: flex-end;
     font-size: 1em;
-    margin-right:10%;
+    margin-right: 10%;
     li {
       list-style: none;
       margin: 2%;
     }
     a {
       text-decoration: none;
-      color: set-text-color($primary-color);
+      color: $secondary-light-color;
+      position: relative;
+      padding-bottom: 5px;
+    &:before{
+      content: " ";
+        border-bottom: solid 1px white;
+        width: 0%;
+        z-index: 200;
+        height: 3px;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        transition: all 0.5s;
+    }
+    &:after{
+      content: " ";
+        border-bottom: solid 1px white;
+        width: 0%;
+        z-index: 200;
+        height: 3px;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        transition: all 0.5s;
+    }
+    &:hover {
+      &:after {
+        width: 50%;
+      }
+      &:before {
+        width: 50%;
+      }
+    }
     }
   }
 }
+
+.basket--svg {
+  position: absolute;
+  cursor: pointer;
+}
+
+
 
 //burger design
 #burger {
@@ -107,21 +151,22 @@ h3 {
 //
 //second part of the page
 
-.menu-button:hover {
-  padding-bottom: 0.5vh;
-  border-bottom: 2px solid set-text-color($primary-color);
-}
+// .menu-button:hover {
+//   padding-bottom: 0.5vh;
+//   border-bottom: 2px solid set-text-color($primary-color);
+// }
 
 .main-container {
-  margin: 10vh 5vh;
+  margin: 20vh 5vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: flex-end;
 
   .main-container-text {
     width: 30vw;
-    position: relative;
-    top: 10vh;
-    left: 5vw;
+    // position: relative;
+    // top: 10vh;
+    // left: 5vw;
     color: set-text-color($background-color);
     h2 {
       font-size: 2em;
@@ -132,8 +177,8 @@ h3 {
   }
   .main-container-image {
     position: relative;
-    right: 8vw;
-    top: 8vh;
+    // right: 8vw;
+    // top: 8vh;
     height: $image-height;
   }
   img {
@@ -144,7 +189,7 @@ h3 {
 
 //styling of image
 
-#image-before {
+#image--frame {
   height: $image-height;
   width: $image-width;
   border: 4px solid $secondary-light-color;
@@ -155,10 +200,10 @@ h3 {
   border-radius: 4px;
 }
 
-#copyright{
+#copyright {
   font-size: 0.8em;
   background-color: $primary-color;
-  height:12vh;
+  height: 12vh;
   // line-height: 4vh;
   margin-top: 10vh;
   padding-top: 4vh;
@@ -168,6 +213,7 @@ h3 {
 
 @import "./sass-modules/_button.scss";
 @import "./sass-modules/_mobile.scss";
+@import "./sass-modules/_cart.scss";
 @import "./sass-modules/_bestsellers.scss";
 @import "./sass-modules/_contactstyle.scss";
 @import "./sass-modules/_promise.scss";

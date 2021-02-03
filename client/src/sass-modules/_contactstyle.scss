@@ -2,49 +2,52 @@
   position: relative;
 }
 
-#contact-form {
-  position: relative;
-  left: 5vw;
-  display: grid;
-  grid-template-columns: 40vw 40vw;
-  grid-template-rows: 15vh 15vh 15vh;
-  list-style: none;
+#result-message {
   color: set-text-color($background-color);
-  font-size: 1em;
-  justify-items: end;
-  
-  li {
-    margin: 3vh;
-    border-radius: 4px;
-  }
-  input {
-    width: 20vw;
-    border-radius: 4px;
-
-  }
-  input:focus{
-      background-color: lightgoldenrodyellow;
-  }
-  #form-message {
-    height: 10vh;
-  }
-  .button-go {
-    justify-self: center;
-    width: 15vw;
-    height: 6vh;
-    grid-area: 3/1/4/3;
-  }
-}
-
-#message-field{
-  display: flex;
-  margin-top: 0 !important;
-  label{
-    padding:7% 0;
-  }
-}
-
-#result-message{
-  color:set-text-color($background-color);
   justify-self: center;
+}
+
+.form--fields {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  width: 90vw;
+  margin-left: 5vh;
+  justify-content: center;
+}
+.labels {
+  color: $secondary-light-color;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  label {
+    margin-bottom: 20px !important;
+  }
+}
+
+.field {
+  display: flex;
+  margin-bottom: 20px;
+  flex-direction: column;
+  input {
+    height: 20px;
+    margin-left: 10px;
+    width: 500px;
+    margin-bottom: 20px !important;
+  }
+}
+
+#form-message {
+  height: 10vh;
+}
+
+.form--btn {
+  align-self: center;
+  margin-left: 60px;
 }
