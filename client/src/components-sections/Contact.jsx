@@ -41,7 +41,7 @@ const Contact = () => {
     }
 
     return (
-        <div id="contact">
+        // <div id="contact">
             <form onSubmit={contactSubmit} method='POST' action='send'>
                 <div className="form--fields">
 
@@ -60,9 +60,8 @@ const Contact = () => {
                 </div>
                 <button type="submit" value="submit" className="btn form--btn">Submit</button>
             </form>
-            <p id="result-message"></p>
 
-        </div>
+        // </div>
     )
 }
 

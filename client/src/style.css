@@ -340,8 +340,8 @@ h3 {
     font-size: 1em !important;
   }
   .pro--header {
-    height: 75px !important;
-    width: 75px !important;
+    height: 120px !important;
+    width: 120px !important;
     margin: 5px;
   }
   .pro--text p {
@@ -416,6 +416,13 @@ h3 {
   }
   .cart--item--right h3 {
     display: none;
+  }
+  form {
+    width: 98vw !important;
+    margin-left: 5px !important;
+  }
+  form input {
+    width: 200px !important;
   }
 }
 
@@ -801,10 +808,6 @@ h3 {
           transform: translateY(0%);
 }
 
-#contact {
-  position: relative;
-}
-
 #result-message {
   color: #e8d5b5;
   -ms-grid-column-align: center;
@@ -935,8 +938,6 @@ form {
   border-radius: 10em;
   height: 175px;
   width: 175px;
-  min-height: 175px;
-  min-width: 175px;
   -webkit-box-shadow: inset 2px 2px 30px rgba(0, 0, 0, 0.4);
           box-shadow: inset 2px 2px 30px rgba(0, 0, 0, 0.4);
   position: relative;

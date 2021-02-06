@@ -90,8 +90,8 @@
   }
 
   .pro--header {
-    height: 75px !important;
-    width: 75px !important;
+    height: 120px !important;
+    width: 120px !important;
     margin: 5px;
   }
   .pro--text {
@@ -156,6 +156,14 @@ align-items: center !important;
 h3{
   display: none;
 }
+}
+form{
+  width: 98vw !important;
+  margin-left: 5px !important;
+  input{
+    width: 200px !important;
+  }
+
 }
 }
 
