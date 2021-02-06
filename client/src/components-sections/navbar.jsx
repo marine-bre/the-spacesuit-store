@@ -53,7 +53,7 @@ const NavBar = ({ items, setItems, showCart, setShowCart }) => {
           unmountOnExit
           timeout={1000}
         >
-          <Cart items={items} setItems={setItems} />
+          <Cart items={items} setItems={setItems} setShowCart={setShowCart} />
         </CSSTransition>
       </nav>
 
