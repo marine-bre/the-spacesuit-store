@@ -115,11 +115,11 @@ h3 {
 }
 
 #nav-bar ul a:hover:after {
-  width: 50%;
+  width: 75%;
 }
 
 #nav-bar ul a:hover:before {
-  width: 50%;
+  width: 75%;
 }
 
 .basket--svg {
@@ -191,6 +191,10 @@ h3 {
 
 .main-container .main-container-text p {
   font-size: 1em;
+}
+
+.main-container .main-container-text button {
+  margin-right: 15px;
 }
 
 .main-container .main-container-image {
