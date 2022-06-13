@@ -7,11 +7,11 @@ import Promise from './components-sections/Promise';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Home from './components-sections/Home'
+import BestSellers from "./components-sections/BestSellers.tsx"
 
 function App() {
 
   const [items,setItems]=useState([])
-  console.log(items)
   const [showCart, setShowCart] = useState(false)
 
 
@@ -51,12 +51,7 @@ function App() {
       <NavBar items={items} setItems={setItems} showCart={showCart} setShowCart={setShowCart}/>
       <Home/>
       <hr id="best"></hr>
-      <div id="bestsellers">
-        <h3>our best sellers</h3>
-        <div className="img--container">        
-        {imageInfo.map(image => <Item name={image.name} price={image.price} url={image.url} quantity={image.quantity} alt={image.name} key={image.name} items={items} setItems={setItems} setShowCart={setShowCart}/>)}
-        </div>
-      </div>
+       <BestSellers images={imageInfo} setShowCart={setShowCart}/>
       <hr id="promise"></hr>
       <div>
         <h3>our promise</h3>

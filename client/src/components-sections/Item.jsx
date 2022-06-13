@@ -1,6 +1,8 @@
 import React from 'react';
 
-const Item = ({ name, price, url, alt, items, quantity, setItems, setShowCart }) => {
+const Item = ({ image, items, alt, setItems, setShowCart }) => {
+
+    const {name, price, quantity, url} = image
 
     const handleClick = () => {
         //check if item is already in cart item list
