@@ -2,7 +2,7 @@ import React from 'react';
 
 const Item = ({ image, items, alt, setItems, setShowCart }) => {
 
-    const {name, price, quantity, url} = image
+    let {name, price, quantity, url} = image
 
     const handleClick = () => {
         //check if item is already in cart item list

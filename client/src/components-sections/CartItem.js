@@ -1,13 +1,15 @@
-import React from 'react';
+import {useContext} from 'react';
+import { Item, CartContext } from "../Contexts.tsx"
 
-function CartItem({ name, price, url, quantity, setItems, items }) {
-
+function CartItem({ item }) {
+    const { items, addItem } = useContext(CartContext) 
+    let {name, price, quantity, url} = item
 
     const remove = () => {
         quantity--
         console.log(quantity)
         if (quantity === 0) {
-            setItems(items.filter(el => el.name !== name))
+            // setItems(items.filter(el => el.name !== name))
         }
         else {
             let newItem = { name, price, url, quantity };
@@ -18,15 +20,17 @@ function CartItem({ name, price, url, quantity, setItems, items }) {
 
     const add = () => {
         quantity++
-        let newItem = { name, price, url, quantity };
-        modifyItems(newItem)
+        let newItem = { name, price, url, quantity }
+        addItem(newItem)
+        // modifyItems(newItem)
     }
 
     const modifyItems = (item) => {
         let i = items.findIndex(el => el.name === name)
         let newArr = [...items]
         newArr[i] = item
-        setItems(newArr)
+        addItem(item)
+        // setItems(newArr)
     }
 
     return (

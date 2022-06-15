@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CSSTransition } from 'react-transition-group'
-import Cart from './Cart'
+import Cart from './Cart.tsx'
 
 const NavBar = ({ items, setItems, showCart, setShowCart }) => {
   let sideBar = document.getElementsByClassName("menu-list");
@@ -53,7 +53,7 @@ const NavBar = ({ items, setItems, showCart, setShowCart }) => {
           unmountOnExit
           timeout={1000}
         >
-          <Cart items={items} setItems={setItems} setShowCart={setShowCart} />
+          <Cart setShowCart={setShowCart} />
         </CSSTransition>
       </nav>
 
