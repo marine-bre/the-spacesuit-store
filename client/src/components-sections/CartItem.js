@@ -2,14 +2,14 @@ import {useContext} from 'react';
 import { Item, CartContext } from "../Contexts.tsx"
 
 function CartItem({ item }) {
-    const { items, addItem } = useContext(CartContext) 
-    let {name, price, quantity, url} = item
+    const { items, addItem, removeItem } = useContext(CartContext) 
+    let {name, price, quantity, url, id} = item
 
-    const remove = () => {
+    const remove = id => {
         quantity--
-        console.log(quantity)
         if (quantity === 0) {
             // setItems(items.filter(el => el.name !== name))
+            removeItem(id)
         }
         else {
             let newItem = { name, price, url, quantity };
@@ -41,7 +41,7 @@ function CartItem({ item }) {
                 <h2>{name}</h2>
                 <div className="item--bottom-section">
                     <div className="cart--qty"    >
-                        <div className="plus" onClick={remove}> - </div>
+                        <div className="plus" onClick={remove(id)}> - </div>
                         <div className="qty"> {quantity} </div>
                         <div className="minus" onClick={add}> + </div>
                     </div>

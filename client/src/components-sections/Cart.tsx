@@ -1,9 +1,9 @@
 import {useContext} from 'react';
 import CartItem from './CartItem'
-import { Item, CartContext } from "../Contexts.tsx"
+import { Item, CartContext } from "../Contexts"
 
 
-function Cart({ setShowCart }) {
+function Cart(setShowCart: any) {
     
     const { items } = useContext(CartContext) 
     const total : Number= items.length > 0 ? items.map((el:Item) => el.price * el.quantity).reduce((acc, cv) => acc + cv, 0) : 0
