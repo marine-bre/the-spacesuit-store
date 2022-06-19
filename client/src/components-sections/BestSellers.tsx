@@ -1,9 +1,9 @@
-import { useContext } from "react"
+import React from "react"
 import ItemComponent from "./Item"
 import { getUniqueId } from "../utils"
 import { Item, CartContext } from "../Contexts"
 
-const BestSellers = (setShowCart : any) => {
+const BestSellers = () => {
 
 
   let images = [
@@ -15,14 +15,12 @@ const BestSellers = (setShowCart : any) => {
     {"name": "SUIT #0373 Vintage", "url": "https://cdn.pixabay.com/photo/2012/10/10/11/06/moon-walk-60616__480.jpg", "price": 423, "quantity":0, "id": getUniqueId() }
   ]
 
-    // const {items, addItem} = useContext(CartContext) // move this to the context as an automatic thing that happens?
-
     return(
         <div id="bestsellers">        
-        <h3>our best sellers</h3>
-        <div className="img--container">        
-            {images.map(image => <ItemComponent item={image} key={image.name} setShowCart={setShowCart}/>)}
-        </div>
+          <h3>our best sellers</h3>
+          <div className="img--container">        
+              {images.map(image => <ItemComponent item={image} key={image.name}/>)}
+          </div>
         </div>
     )
 }

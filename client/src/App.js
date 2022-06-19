@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import NavBar from './components-sections/navbar';
+import NavBar from './components-sections/Navbar';
 import './style.css';
-import Item from './components-sections/Item';
 import Contact from './components-sections/Contact';
 import Promise from './components-sections/Promise';
 import AOS from 'aos';
@@ -12,7 +11,6 @@ import BestSellers from "./components-sections/BestSellers.tsx"
 function App() {
 
   const [items,setItems]=useState([])
-  const [showCart, setShowCart] = useState(false)
 
   // parallax for main image
 
@@ -37,10 +35,10 @@ function App() {
 
   return (
     <div className="App" id="home">
-      <NavBar items={items} setItems={setItems} showCart={showCart} setShowCart={setShowCart}/>
+      <NavBar/>
       <Home/>
       <hr id="best"></hr>
-       <BestSellers setShowCart={setShowCart}/>
+       <BestSellers/>
       <hr id="promise"></hr>
       <div>
         <h3>our promise</h3>

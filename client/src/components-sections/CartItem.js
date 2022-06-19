@@ -2,36 +2,8 @@ import {useContext} from 'react';
 import { Item, CartContext } from "../Contexts.tsx"
 
 function CartItem({ item }) {
-    const { items, addItem, removeItem } = useContext(CartContext) 
+    const { increaseItem, decreaseItem } = useContext(CartContext) 
     let {name, price, quantity, url, id} = item
-
-    const remove = id => {
-        quantity--
-        if (quantity === 0) {
-            // setItems(items.filter(el => el.name !== name))
-            removeItem(id)
-        }
-        else {
-            let newItem = { name, price, url, quantity };
-            modifyItems(newItem)
-        }
-    }
-
-
-    const add = () => {
-        quantity++
-        let newItem = { name, price, url, quantity }
-        addItem(newItem)
-        // modifyItems(newItem)
-    }
-
-    const modifyItems = (item) => {
-        let i = items.findIndex(el => el.name === name)
-        let newArr = [...items]
-        newArr[i] = item
-        addItem(item)
-        // setItems(newArr)
-    }
 
     return (
         <div className="cart--item--container">
@@ -41,9 +13,9 @@ function CartItem({ item }) {
                 <h2>{name}</h2>
                 <div className="item--bottom-section">
                     <div className="cart--qty"    >
-                        <div className="plus" onClick={remove(id)}> - </div>
+                        <div className="plus" onClick={() => decreaseItem(item)}> - </div>
                         <div className="qty"> {quantity} </div>
-                        <div className="minus" onClick={add}> + </div>
+                        <div className="minus" onClick={() => increaseItem(item)}> + </div>
                     </div>
                 </div>
             </div>

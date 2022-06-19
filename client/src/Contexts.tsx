@@ -1,4 +1,4 @@
-import {createContext, useState} from "react"
+import React from "react"
 
 export interface Item{
     name: string, 
@@ -8,35 +8,76 @@ export interface Item{
     id: Number
 }
 
-export type ItemContext = {
+export type CartContextType = {
     items : Item[],
-    addItem: (item : Item) => void,
-    removeItem: (id : Number) => void,
-    increaseQuantity: (item : Item) => void
+    increaseItem: (item : Item) => void,
+    decreaseItem: (item: Item) => void,
+}
+
+const defaultCartState : CartContextType = {
+    items : [],
+    increaseItem: () => null,
+    decreaseItem: () => null,
+}
+
+type Props = {
+    children : JSX.Element
+}
+
+export const CartContext = React.createContext<CartContextType>(defaultCartState)
+
+export const CartProvider = ({children} : Props) => {
+
+    const [items, setItems] = React.useState<Item[]>([])
+
+    const increaseItem = (item : Item) => {
+        const index = items.findIndex((i : Item) => item.id === i.id)
+        if(index !== -1){
+            const updatedItems = items
+            updatedItems[index].quantity ++
+            setItems(updatedItems)
+        }
+        else{
+            item.quantity ++
+            setItems([...items, item])
+        }
+    }
+
+    const decreaseItem = (item : Item) => {
+        const indexToRemove = items.findIndex((i : Item) => i.id === item.id)
+        const updatedItems = items
+        updatedItems[indexToRemove].quantity --
+        if (updatedItems[indexToRemove].quantity <= 0){
+            items.splice(indexToRemove, 1)
+        }
+        setItems(updatedItems)
+    }
+
+
+    return <CartContext.Provider value={{items, increaseItem, decreaseItem}}>{children}</CartContext.Provider>
 }
 
 
-export const CartContext = createContext<ItemContext>()
 
-export const CartProvider = ({children}) => {
+///////  Cart opened state ///////
 
-    const [items, setItems] = useState([])
 
-    const addItem = (item : Item) => {
-        setItems([...items, item])
-    }
 
-    const removeItem = (id : Number) => {
-        const indexToRemove = items.indexOf((item : Item) => item.id === id)
-        items.splice(indexToRemove, 1)
-        setItems(items)
-    }
-
-    const increaseQuantity = (item: Item) => {
-        const index = items.indexOf((i : Item) => i.id === item.id)
-        items[index].quantity ++
-    }
-
-    return <CartContext.Provider value={{items, addItem, removeItem, increaseQuantity}}>{children}</CartContext.Provider>
+type CartUIContextType = {
+    cartState : boolean,
+    setCartState: (newState : boolean) => void
 }
 
+const defaultCartUIContext : CartUIContextType = {
+    cartState : false,
+    setCartState : () => null
+}
+export const CartUIContext = React.createContext(defaultCartUIContext)
+
+export const CartUIContextProvider = ({children} : Props) => {
+    
+    const [cartState, setCartState] = React.useState<boolean>(false)
+
+    return <CartUIContext.Provider value={{cartState, setCartState}}>{children}</CartUIContext.Provider>
+    
+}

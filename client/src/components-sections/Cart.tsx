@@ -1,11 +1,13 @@
-import {useContext} from 'react';
+import React from 'react';
 import CartItem from './CartItem'
-import { Item, CartContext } from "../Contexts"
+import { Item, CartContext, CartUIContext } from "../Contexts"
 
 
-function Cart(setShowCart: any) {
+function Cart() {
     
-    const { items } = useContext(CartContext) 
+    const { items } = React.useContext(CartContext) 
+    const { setCartState } = React.useContext(CartUIContext) 
+
     const total : Number= items.length > 0 ? items.map((el:Item) => el.price * el.quantity).reduce((acc, cv) => acc + cv, 0) : 0
 
     return (
@@ -22,7 +24,7 @@ function Cart(setShowCart: any) {
                 </div>
                 <div style={{display:"flex"}}>
                     <button className="cart--btn">CHECKOUT</button>
-                    <button className="cart--btn" onClick={() => setShowCart(false)}>CLOSE</button>
+                    <button className="cart--btn" onClick={() => setCartState(false)}>CLOSE</button>
                 </div>
             </div>
         </div>
