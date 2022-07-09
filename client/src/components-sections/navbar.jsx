@@ -1,12 +1,14 @@
 import React, { useState } from "react";
+import { CartUIContext } from "../Contexts"
 import { CSSTransition } from 'react-transition-group'
 import Cart from './Cart'
 
-const NavBar = ({ items, setItems, showCart, setShowCart }) => {
+const NavBar = () => {
   let sideBar = document.getElementsByClassName("menu-list");
   let menuElements = [...document.getElementsByClassName("menu-button")];
 
   const [burgerState, setBurgerState] = useState('close');
+  const {setCartState, cartState} = React.useContext(CartUIContext)
 
   //slide-in menu and changing configuration of X
   const closeMenu = () => {
@@ -19,8 +21,9 @@ const NavBar = ({ items, setItems, showCart, setShowCart }) => {
 
 
   const cartOpen = () => {
-    showCart ? setShowCart(false) : setShowCart(true)
+    cartState ? setCartState(false) : setCartState(true)
   }
+  
   return (
     <>
       <nav id="nav-bar">
@@ -48,12 +51,12 @@ const NavBar = ({ items, setItems, showCart, setShowCart }) => {
           <div className={burgerState}></div>
         </div>
         <CSSTransition
-          in={showCart}
+          in={cartState}
           classNames="cart"
           unmountOnExit
           timeout={1000}
         >
-          <Cart items={items} setItems={setItems} setShowCart={setShowCart} />
+          <Cart/>
         </CSSTransition>
       </nav>
 
