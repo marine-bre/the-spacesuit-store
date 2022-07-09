@@ -1,29 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import NavBar from './components-sections/Navbar';
-import './style.css';
-import Contact from './components-sections/Contact';
-import Promise from './components-sections/Promise';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React, { useEffect } from 'react'
+import NavBar from './components-sections/Navbar'
+import './style.css'
+import Contact from './components-sections/Contact'
+import Promise from './components-sections/Promise'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import Home from './components-sections/Home'
-import BestSellers from "./components-sections/BestSellers.tsx"
+import BestSellers from "./components-sections/BestSellers"
 
 function App() {
-
-  const [items,setItems]=useState([])
 
   // parallax for main image
 
   useEffect(() => {
-    const mainImage = document.getElementById("main-image");
-    const square = document.getElementById("image--frame");
+    const mainImage = document.getElementById("main-image")
+    const square = document.getElementById("image--frame")
     window.addEventListener("scroll", () => {
       let value = window.scrollY;
-      mainImage.style.top = value * 0.1 + "px";
-      square.style.top = value * 0.02 - 6 + "vh";
-      mainImage.style.right = value * 0.1 + "px";
-      square.style.right = value * 0.02 - 6 + "vw";
-    })
+      if (mainImage && square){
+        mainImage.style.top = value * 0.1 + "px"
+        square.style.top = value * 0.02 - 6 + "vh"
+        mainImage.style.right = value * 0.1 + "px"
+        square.style.right = value * 0.02 - 6 + "vw"
+    }})
   })
 
   useEffect(()=>{

@@ -1,35 +1,38 @@
-import React from 'react';
-import { useState } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react'
+import axios from 'axios'
 
 const Contact = () => {
 
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
-    const [message, setMessage] = useState("");
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState("")
+    const [phone, setPhone] = useState("")
+    const [message, setMessage] = useState("")
 
-    const resultMessage = document.getElementById("result-message");
+    const resultMessage = document.getElementById("result-message")
 
-    const emailValidation = (email) => {
-        const emailRegex = /(^\w+)[a-z0-9.]+\@\w+\.\w+/i;
+    const emailValidation = (email:string) => {
+        const emailRegex = /(^\w+)[a-z0-9.]+\@\w+\.\w+/i
         return emailRegex.test(email) ? true : false
     }
 
     const resetFields = () => {
-        setName('');
-        setEmail('');
-        setPhone('');
-        setMessage('');
+        setName('')
+        setEmail('')
+        setPhone('')
+        setMessage('')
     }
 
-    const contactSubmit = (e) => {
+    const contactSubmit = (e:any) => {
 
         e.preventDefault();
         if (emailValidation(email) === true) {
             axios.post('/send', { message, name, phone, email })
-                .then(resetFields())
-                .then(resultMessage.textContent = "We got it! Thanks!")
+                .then(res => {
+                    resetFields()
+                    if (resultMessage){
+                        resultMessage.textContent = "We got it! Thanks!"
+                    }
+                })
                 .catch((error) => {
                     console.log(JSON.stringify(error))
                 });
