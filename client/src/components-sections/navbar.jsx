@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import {CartUIContext} from "../Contexts"
+import { CartUIContext } from "../Contexts"
 import { CSSTransition } from 'react-transition-group'
-import Cart from './Cart.tsx'
+import Cart from './Cart'
 
 const NavBar = () => {
   let sideBar = document.getElementsByClassName("menu-list");
@@ -23,6 +23,7 @@ const NavBar = () => {
   const cartOpen = () => {
     cartState ? setCartState(false) : setCartState(true)
   }
+  
   return (
     <>
       <nav id="nav-bar">

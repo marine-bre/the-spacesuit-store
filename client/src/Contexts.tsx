@@ -35,7 +35,7 @@ export const CartProvider = ({children} : Props) => {
         if(index !== -1){
             const updatedItems = items
             updatedItems[index].quantity ++
-            setItems(updatedItems)
+            setItems([...updatedItems])
         }
         else{
             item.quantity ++
@@ -50,7 +50,7 @@ export const CartProvider = ({children} : Props) => {
         if (updatedItems[indexToRemove].quantity <= 0){
             items.splice(indexToRemove, 1)
         }
-        setItems(updatedItems)
+        setItems([...updatedItems])
     }
 
 

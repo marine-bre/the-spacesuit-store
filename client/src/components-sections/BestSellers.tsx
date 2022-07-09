@@ -1,7 +1,6 @@
 import React from "react"
 import ItemComponent from "./Item"
 import { getUniqueId } from "../utils"
-import { Item, CartContext } from "../Contexts"
 
 const BestSellers = () => {
 

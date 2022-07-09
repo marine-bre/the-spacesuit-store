@@ -1,10 +1,11 @@
 import React from 'react';
 import CartItem from './CartItem'
 import { Item, CartContext, CartUIContext } from "../Contexts"
+import { useEffect } from 'react';
 
 
 function Cart() {
-    
+
     const { items } = React.useContext(CartContext) 
     const { setCartState } = React.useContext(CartUIContext) 
 
@@ -16,7 +17,7 @@ function Cart() {
                 <h2>MY BASKET {items.length > 0 ? ` - ${items.length} items` : ""}</h2>
                 </div>
                 <div className="cart--items">
-                    {items.map(el => <CartItem item={el}/>)}
+                    {items.map((el:Item) => <CartItem item={el}/>)}
                 </div>
             <div className="cart--bottom">
                 <div className="cart--total">
