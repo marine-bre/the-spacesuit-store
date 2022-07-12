@@ -56,6 +56,7 @@ h3 {
   justify-content: space-between;
   align-items: center;
   background-color: $primary-color;
+  box-shadow: 0 2px 20px black;
   h1 {
     font-size: 3em;
     color: set-text-color($primary-color);

@@ -54,6 +54,8 @@ h3 {
       -ms-flex-align: center;
           align-items: center;
   background-color: #153464;
+  -webkit-box-shadow: 0 2px 20px black;
+          box-shadow: 0 2px 20px black;
 }
 
 #nav-bar h1 {

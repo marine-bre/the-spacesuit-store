@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CartUIContext } from "../Contexts"
+import { CartUIContext, CartContext } from "../Contexts"
 import { CSSTransition } from 'react-transition-group'
 import Cart from './Cart'
 
@@ -24,6 +24,9 @@ const NavBar = () => {
     cartState ? setCartState(false) : setCartState(true)
   }
   
+  const { items } = React.useContext(CartContext) 
+  const totalItems = items.reduce((cv, acc) => acc.quantity + cv,0)
+  
   return (
     <>
       <nav id="nav-bar">
@@ -41,6 +44,10 @@ const NavBar = () => {
 			c5.667,17.781,22,29.729,40.656,29.729h251.875c18.656,0,34.99-11.948,40.656-29.74l65.206-204.927h13.534
 			c5.896,0,10.667-4.771,10.667-10.667C512,218.102,507.229,213.331,501.333,213.331z M402.26,433.123
 			c-2.833,8.896-11,14.875-20.323,14.875H130.063c-9.323,0-17.49-5.979-20.323-14.865L46.589,234.664h418.823L402.26,433.123z"/>
+              {totalItems && <g>
+                <circle cx="370" cy="400" r="100" fill="#b92b27"/>
+                <text x="370" y="410" text-anchor="middle" font-size="120px" stroke-width="8px" stroke="#fff" alignment-baseline="middle">{totalItems}</text>
+              </g>}
             </svg>
           </li>
         </ul>
